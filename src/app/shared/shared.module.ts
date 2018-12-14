@@ -9,13 +9,13 @@ import { NopagefoundComponent } from './nopagefound/nopagefound.component';
         HeaderComponent,
         SidebarComponent,
         BreadcrumbsComponent,
-        NopagefoundComponent
+        NopagefoundComponent,
     ],
     exports: [
         HeaderComponent,
         SidebarComponent,
         BreadcrumbsComponent,
-        NopagefoundComponent
+        NopagefoundComponent,
     ]
 })
 
