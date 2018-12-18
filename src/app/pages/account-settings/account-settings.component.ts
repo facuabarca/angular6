@@ -22,20 +22,20 @@ export class AccountSettingsComponent implements OnInit {
 
   aplicarCheck(link: any): void {
     let selectores = document.getElementsByClassName('selector');
-    for ( let ref of selectores ) {
-      ref.classList.remove('working');
-    }
-    link.classList.add('working');
+    // for ( let ref of selectores ) {
+    //   ref.classList.remove('working');
+    // }
+    // link.classList.add('working');
   }
 
   colocarCheck(): void {
     let selectores = document.getElementsByClassName('selector');
     let tema = this._ajustes.ajustes.tema;
-    for ( let ref of selectores ) {
-      if ( ref.getAttribute('data-theme') === tema ) {
-        ref.classList.add('working');
-        break;
-      }
-    }
+    // for ( let ref of selectores ) {
+    //   if ( ref.getAttribute('data-theme') === tema ) {
+    //     ref.classList.add('working');
+    //     break;
+    //   }
+    // }
   }
 }
