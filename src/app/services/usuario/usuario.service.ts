@@ -68,7 +68,7 @@ export class UsuarioService {
      let url = URL_SERVICIOS + '/login';
      return this.http.post(url, usuario).pipe(
       map((resp: any) => {
-        this.guardarStorage(resp.id, resp.token, resp.Usuario);
+        this.guardarStorage(resp.id, resp.token, resp.usuario);
         return true;
       })
      );
@@ -80,6 +80,20 @@ export class UsuarioService {
     return this.http.post(url, usuario).pipe(
       map((resp: any) => {
         swal('Usuario creado', usuario.email, 'success');
+      })
+    );
+  }
+
+  actualizarUsuario (usuario: Usuario) {
+    let url = URL_SERVICIOS + '/usuario/' + usuario._id;
+    url += '?token=' + this.token;
+
+    return this.http.put(url, usuario)
+    .pipe(
+      map((res: any) => {
+         this.guardarStorage( res.usuario._id, this.token, res.usuario);
+          swal('Usuario actualizado', res.usuario.nombre, 'success');
+          return true;
       })
     );
   }
